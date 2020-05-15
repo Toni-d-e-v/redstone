@@ -47,7 +47,7 @@ namespace CryptoNote
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3         =                          500'000;
 
 
-        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(1000000000000000); // Premine = 100000;
+        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(250000000000); // Premine = 250000;
 
         const char GENESIS_COINBASE_TX_HEX[] = "010a01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210142694232c5b04151d9e4c27d31ec7a68ea568b19488cfcb422659a07a0e44dd5";
 
@@ -64,7 +64,7 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE            =                                       600;
 
-        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         10;
+        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         6;
         const uint64_t MINIMUM_FEE                                       =                             UINT64_C(1); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
