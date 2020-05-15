@@ -1,10 +1,10 @@
-# Avrio CryptoNight
-This is the cryptonight based version of Avrio, this will be used until the from-scratch, new code base is finished. At that point the coins on this network will be swapped over and this software will be deprecated. 
+# RedStone
+RedStones is the gem cryptocurrency. Rairty, priavcy and a finite suply.
 
 
 ## Installing
 
-We offer binary images of the latest releases [here](https://github.com/avrio-project/avrio/releases/latest)
+We offer binary images of the latest releases [here](https://github.com/redstone-project/redstone/releases/latest)
 
 If you would like to compile yourself, read on.
 
@@ -36,8 +36,8 @@ If you are using Clang, you will need Clang 6.0 or higher. You will also need li
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo apt-get update
 sudo apt-get install -y build-essential g++-8 gcc-8 git libboost-all-dev libssl1.0-dev cmake
-git clone -b master --single-branch https://github.com/avrio-project/avrio/
-cd avrio
+git clone -b master --single-branch redstone-project/redstone
+cd redstone
 mkdir build
 cd build
 CC=gcc-8 CXX=g++-8 cmake ..
@@ -77,8 +77,8 @@ sudo apt-get update
 sudo apt-get install aptitude -y
 sudo aptitude install -y -o Aptitude::ProblemResolver::SolutionCost='100*canceled-actions,200*removals' build-essential clang-6.0 libstdc++-7-dev git libboost-all-dev python-pip libssl1.0-dev
 sudo pip install cmake
-git clone -b master https://github.com/avrio-project/avrio/
-cd avrio
+git clone -b master https://github.com/redstone-project/redstone
+cd redstone
 mkdir build
 cd build
 CC=clang-6.0 CXX=clang++-6.0 cmake ..
@@ -89,7 +89,7 @@ The binaries will be in the `src` folder when you are complete.
 
 ```bash
 cd src
-./avriod --version
+./redstone-node --version
 ```
 
 ##### Generic Linux
@@ -100,8 +100,8 @@ If you want to use clang, ensure you set the environment variables `CC` and `CXX
 See the ubuntu instructions for an example.
 
 ```bash
-git clone -b master --single-branch https://github.com/avrio-project/avrio/
-cd avrio
+git clone -b master --single-branch https://github.com/redstone-project/redstone
+cd redstone
 mkdir build
 cd build
 cmake ..
@@ -128,8 +128,8 @@ cd src
 brew install --force cmake boost llvm@8 openssl
 brew link --force llvm@8
 ln -s /usr/local/opt/llvm@8 /usr/local/opt/llvm
-git clone -b master --single-branch https://github.com/avrio-project/avrio/
-cd avrio
+git clone -b master --single-branch https://github.com/redstone-project/redstone
+cd redstone
 mkdir build
 cd build
 CC=/usr/local/opt/llvm@8/bin/clang CXX=/usr/local/opt/llvm@8/bin/clang++ cmake ..
@@ -139,7 +139,7 @@ The binaries will be in the `src` folder when you are complete.
 
 ```bash
 cd src
-./avriod --version
+./redstone-node --version
 ```
 
 #### Windows
@@ -163,7 +163,7 @@ For 64-bit:
 From the start menu, open 'x64 Native Tools Command Prompt for VS 2019'.
 
 ```cmd
-cd <your_avrio_directory>
+cd <your_redstone_directory>
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" -A x64 .. -DBOOST_ROOT=C:/local/boost_1_69_0
@@ -174,7 +174,7 @@ For 32-bit:
 From the start menu, open 'x86 Native Tools Command Prompt for VS 2019'.
 
 ```cmd
-cd <your_avrio_directory>
+cd <your_redstone_directory>
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" -A Win32 .. -DBOOST_ROOT=C:/local/boost_1_69_0
@@ -186,7 +186,7 @@ The binaries will be in the `src/Release` folder when you are complete.
 ```cmd
 cd src
 cd Release
-avriod.exe --version
+redstone-node.exe --version
 ```
 
 #### Thanks
@@ -195,7 +195,7 @@ Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project,
 
 ### Copypasta for license when editing files
 
-Hi Avrio contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/CryptoNoteConfig.h](https://github.com/turtlecoin/turtlecoin/commit/28cfef2575f2d767f6e512f2a4017adbf44e610e) for an example.
+Hi restone contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/CryptoNoteConfig.h](https://github.com/turtlecoin/turtlecoin/commit/28cfef2575f2d767f6e512f2a4017adbf44e610e) for an example.
 
 ```x
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers,
