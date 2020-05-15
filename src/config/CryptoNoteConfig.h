@@ -20,7 +20,7 @@ namespace CryptoNote
 {
     namespace parameters
     {
-        const uint64_t DIFFICULTY_TARGET                        =                               180; // seconds (3 mins)
+        const uint64_t DIFFICULTY_TARGET                        =                               20; // seconds
 
         // Infinite supply, following is obsolute
         const uint64_t MONEY_SUPPLY                             = UINT64_C(10'000'000'000'000'000);
@@ -47,7 +47,7 @@ namespace CryptoNote
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3         =                          500'000;
 
 
-        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(1000); // Premine = 0;
+        const uint64_t GENESIS_BLOCK_REWARD                     =         UINT64_C(1000000000000000); // Premine = 100000;
 
         const char GENESIS_COINBASE_TX_HEX[] = "010a01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210142694232c5b04151d9e4c27d31ec7a68ea568b19488cfcb422659a07a0e44dd5";
 
@@ -64,8 +64,8 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE            =                                       600;
 
-        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         4;
-        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(250); //0.025
+        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT                  =                                         10;
+        const uint64_t MINIMUM_FEE                                       =                             UINT64_C(1); // "basicly" feeless
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                        =                                      0;
         const uint64_t MAXIMUM_MIXIN_V1                        =                                     10;
@@ -146,7 +146,7 @@ namespace CryptoNote
            at any given time. Incoming fusion transactions that attempt to exceed this limit
            will be rejected from the pool and will not be added. This mechanism is in place
            to help curtail fusion transaction spam. */
-        const size_t   FUSION_TX_MAX_POOL_COUNT             =                                                            30;
+        const size_t   FUSION_TX_MAX_POOL_COUNT             =                                                            3000;
 
         const size_t   NORMAL_TX_MAX_OUTPUT_RATIO_V1        =                                                            10;
         const size_t   NORMAL_TX_MAX_OUTPUT_RATIO_V1_HEIGHT =                                                       350'000;
@@ -154,7 +154,7 @@ namespace CryptoNote
         const uint32_t UPGRADE_HEIGHT_V2                    =                 1; // Upgrade height for CN-Dark Variant 1 switch
         const uint32_t UPGRADE_HEIGHT_V3                    =                2; // Upgrade height for CN-Dark Lite Variant 1 switch
         const uint32_t UPGRADE_HEIGHT_V4                    =              3; // Upgrade height for CN-Lite Variant 1 switch.
-        const uint32_t UPGRADE_HEIGHT_V5                    =            4; // Upgrade height for CN-TRTL
+        const uint32_t UPGRADE_HEIGHT_V5                    =            4; // Upgrade height for CN-UPX
         const uint32_t UPGRADE_HEIGHT_V6                    =          CRYPTONOTE_MAX_BLOCK_NUMBER - 1; // Upgrade height for Chukwa switch.
 
         const unsigned UPGRADE_VOTING_THRESHOLD             =                                                            90; // percent
@@ -190,15 +190,15 @@ namespace CryptoNote
         /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
         static_assert(FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE, "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
 
-        const char     CRYPTONOTE_BLOCKS_FILENAME[]       =                                               "avrio_blocks.bin";
-        const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[] =                                         "avrio_blockindexes.bin";
-        const char     CRYPTONOTE_POOLDATA_FILENAME[]     =                                            "avrio_poolstate.bin";
-        const char     P2P_NET_DATA_FILENAME[]            =                                             "avrio_p2pstate.bin";
-        const char     MINER_CONFIG_FILE_NAME[]           =                                          "avrio_miner_conf.json";
+        const char     CRYPTONOTE_BLOCKS_FILENAME[]       =                                               "gem_blocks.bin";
+        const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[] =                                         "gem_blockindexes.bin";
+        const char     CRYPTONOTE_POOLDATA_FILENAME[]     =                                            "gem_poolstate.bin";
+        const char     P2P_NET_DATA_FILENAME[]            =                                             "gem_p2pstate.bin";
+        const char     MINER_CONFIG_FILE_NAME[]           =                                          "gem_miner_conf.json";
     } // namespace parameters
 
-    const char     CRYPTONOTE_NAME[]           =              "Avrio";
-    const char     DATADIR_NAME[]              =             "avrio";
+    const char     CRYPTONOTE_NAME[]           =              "Redstones";
+    const char     DATADIR_NAME[]              =             "redstones_dir";
 
     const uint8_t  TRANSACTION_VERSION_1       =                     1;
     const uint8_t  TRANSACTION_VERSION_2       =                     2;
@@ -228,9 +228,9 @@ namespace CryptoNote
     const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT        =              100; // by default, blocks count in blocks downloading
     const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT     =             1000;
 
-    const int      P2P_DEFAULT_PORT                          =            34523;
-    const int      RPC_DEFAULT_PORT                          =            24524;
-    const int      SERVICE_DEFAULT_PORT                      =            24562;
+    const int      P2P_DEFAULT_PORT                          =            9090;
+    const int      RPC_DEFAULT_PORT                          =            9999;
+    const int      SERVICE_DEFAULT_PORT                      =            1010;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT            =             1000;
     const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT             =             5000;
@@ -264,16 +264,16 @@ namespace CryptoNote
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES           =              125; // 125 files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT =                4; // 4 DB threads
 
-    const char        LATEST_VERSION_URL[] =     "https://github.com/avrio-project/avrio-cryptonight/releases/latest";
-    const std::string LICENSE_URL          = "https://github.com/avrio-project/avrio-cryptonight/blob/master/LICENSE";
+    const char        LATEST_VERSION_URL[] =     "https://github.com/redstone-project/redstone/releases/latest";
+    const std::string LICENSE_URL          = "https://github.com/redstone-project/redstone/blob/master/LICENSE";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {
-            0x7a, 0x4f, 0xed, 0xa6, 0x77, 0xf2, 0x5b, 0x9a, 0x7e, 0x3b, 0xb3, 0xa8, 0xe8, 0xa1, 0xc4, 0xf2
+            0x7a, 0x4f, 0xed, 0xa6, 0x77, 0xf2, 0xab, 0x9a, 0x7e, 0x3b, 0xb3, 0xa8, 0xe8, 0xa1, 0xc4, 0xf7
         }
     };
 
     const char *const SEED_NODES[] = {
-        "99.248.224.55:34523" // Leo, (helives.mine2.live)
+        "99.248.224.55:9090" // Leo, (helives.mine2.live)
     };
 } // namespace CryptoNote
