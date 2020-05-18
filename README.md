@@ -203,6 +203,6 @@ Hi redStone contributor, thanks for forking and sending back Pull Requests. Exte
 // Copyright (c) 2018-2019, The TurtleCoin Developers,
 // Copyright (c) 2019, The Xenium Developers,
 // Copyright (c) 2019, The Avrio Developers
-// Copyright (c) 2020, The RedStone Dwvelopers
+// Copyright (c) 2020, The RedStone Developers
 // Please see the included LICENSE file for more information.
 ```
