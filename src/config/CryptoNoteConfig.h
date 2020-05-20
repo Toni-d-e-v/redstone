@@ -155,7 +155,7 @@ namespace CryptoNote
         const uint32_t UPGRADE_HEIGHT_V3                    =                2; // Upgrade height for CN-Dark Lite Variant 1 switch
         const uint32_t UPGRADE_HEIGHT_V4                    =              3; // Upgrade height for CN-Lite Variant 1 switch.
         const uint32_t UPGRADE_HEIGHT_V5                    =            4; // Upgrade height for CN-UPX
-        const uint32_t UPGRADE_HEIGHT_V6                    =          CRYPTONOTE_MAX_BLOCK_NUMBER - 1; // Upgrade height for Chukwa switch.
+        const uint32_t UPGRADE_HEIGHT_V6                    =          5; // Upgrade height for Chukwa switch.
 
         const unsigned UPGRADE_VOTING_THRESHOLD             =                                                            90; // percent
         const uint32_t UPGRADE_VOTING_WINDOW                =                             EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
