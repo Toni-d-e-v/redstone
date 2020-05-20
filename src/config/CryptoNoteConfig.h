@@ -31,7 +31,7 @@ namespace CryptoNote
         const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE           =                      500'000'000;
         const size_t   CRYPTONOTE_MAX_TX_SIZE                   =                      100'000'000;
         const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX  =                           0x95;
-        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW     =                               40;
+        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW     =                               1;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT       =                      60 * 60 * 2;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3    =            3 * DIFFICULTY_TARGET;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V4    =            6 * DIFFICULTY_TARGET;
