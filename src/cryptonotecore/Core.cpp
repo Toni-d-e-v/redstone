@@ -1202,7 +1202,7 @@ namespace CryptoNote
                 return error::BlockValidationError::CHECKPOINT_BLOCK_HASH_MISMATCH;
             }
         }
-        else if (!currency.checkProofOfWork(cachedBlock, currentDifficulty))
+        else if (!currency.checkProofOfWork(cachedBlock, currentDifficulty) && currentDifficulty == 0)
         {
             logger(Logging::DEBUGGING) << "Proof of work too weak for block " << blockStr;
             return error::BlockValidationError::PROOF_OF_WORK_TOO_WEAK;

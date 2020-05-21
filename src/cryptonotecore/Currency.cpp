@@ -190,7 +190,7 @@ namespace CryptoNote
         int64_t &emissionChange) const
     {
         
-        uint64_t baseReward = 10000; // (1 AIO) 
+        uint64_t baseReward = 500000; // (0.5 RS) 
 
         logger(TRACE) << "Base reward " << baseReward;
 
