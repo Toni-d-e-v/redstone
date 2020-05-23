@@ -1,6 +1,6 @@
 # RedStone
 RedStones is the gem cryptocurrency. Rairty, priavcy and a finite suply.
-
+LINUX  BUILD  https://gofile.io/d/KW6ZNq --download
 
 ## Installing
 
