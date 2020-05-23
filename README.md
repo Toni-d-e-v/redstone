@@ -167,7 +167,7 @@ cd <your_redstone_directory>
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" -A x64 .. -DBOOST_ROOT=C:/local/boost_1_69_0
-MSBuild avrio.sln /p:Configuration=Release /m:1
+MSBuild Redstone.sln /p:Configuration=Release /m:1
 ```
 
 For 32-bit:
@@ -178,8 +178,7 @@ cd <your_redstone_directory>
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" -A Win32 .. -DBOOST_ROOT=C:/local/boost_1_69_0
-MSBuild avrio.sln /p:Configuration=Release /p:Platform=Win32 /m:1
-```
+MSBuild Redstone.sln /p:Configuration=Release /m:1
 
 The binaries will be in the `src/Release` folder when you are complete.
 
