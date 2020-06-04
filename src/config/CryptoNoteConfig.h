@@ -28,8 +28,8 @@ namespace CryptoNote
         static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
         // end obsoulte
         const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER              =                    1'000'000'000;
-        const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE           =                      500'000'000;
-        const size_t   CRYPTONOTE_MAX_TX_SIZE                   =                      100'000'000;
+        const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE           =                      1'000'000'000;
+        const size_t   CRYPTONOTE_MAX_TX_SIZE                   =                      500'000'000;
         const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX  =                           0x95;
         const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW     =                               1;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT       =                      60 * 60 * 2;
@@ -154,8 +154,8 @@ namespace CryptoNote
         const uint32_t UPGRADE_HEIGHT_V2                    =                 1; // Upgrade height for CN-Dark Variant 1 switch
         const uint32_t UPGRADE_HEIGHT_V3                    =                2; // Upgrade height for CN-Dark Lite Variant 1 switch
         const uint32_t UPGRADE_HEIGHT_V4                    =              3; // Upgrade height for CN-Lite Variant 1 switch.
-        const uint32_t UPGRADE_HEIGHT_V5                    =            4; // Upgrade height for CN-UPX
-        const uint32_t UPGRADE_HEIGHT_V6                    =          5; // Upgrade height for Chukwa switch.
+        const uint32_t UPGRADE_HEIGHT_V5                    =            4; // Upgrade height for CN-turtle
+        const uint32_t UPGRADE_HEIGHT_V6                    =          CRYPTONOTE_MAX_BLOCK_NUMBER-1; // Upgrade height for Chukwa switch.
 
         const unsigned UPGRADE_VOTING_THRESHOLD             =                                                            90; // percent
         const uint32_t UPGRADE_VOTING_WINDOW                =                             EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
