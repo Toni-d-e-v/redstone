@@ -88,12 +88,6 @@ jobs:
           cd src
           TARGETS="redstone-node geminer redwallet gemservice cryptotest redwallet-api redwallet-upgrader"
           ${STRIP} ${TARGETS}
-      # Test the crypto
-      - name: Test Crypto
-        if: matrix.build_name != 'aarch64'
-        run: |
-          cd build/src
-          ./cryptotest
       # Prepare for deploy
       - name: Prepare for Deploy
         id: before_deploy
@@ -165,12 +159,7 @@ jobs:
         run: |
           cd build
           make -j2
-      # Test the crypto
-      - name: Test Crypto
-        if: matrix.build_name != 'aarch64'
-        run: |
-          cd build/src
-          ./cryptotest
+      
       # Prepare for deploy
       - name: Prepare for Deploy
         id: before_deploy
@@ -242,12 +231,6 @@ jobs:
           $env:PATH = "$env:PATH;$env:MSBUILD_PATH"
           cd build
           MSBuild redstone.sln /p:CLToolExe=clcache.exe /p:Configuration=Release /p:PlatformToolset=v141 /m
-      # Test the crypto
-      - name: Test Crypto
-        shell: bash
-        run: |
-          cd build/src/Release
-          ./cryptotest.exe
       # Prepare for deploy
       - name: Prepare for Deploy
         shell: bash
