@@ -81,12 +81,12 @@ jobs:
       - name: Prepare and Build (aarch64)
         if: matrix.build_name == 'aarch64'
         run: |
-          source scripts/prep-aarch64.sh
+          source scripts/prep-aarch64.sh 
           mkdir build && cd build
           cmake -DARCH=default -DCMAKE_BUILD_TYPE=Release -DSTATIC=true ..
           make -j2
           cd src
-          TARGETS="redstone-node geminer redwallet gemservice cryptotest redwallet-api redwallet-upgrader"
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
           ${STRIP} ${TARGETS}
       # Prepare for deploy
       - name: Prepare for Deploy
@@ -96,7 +96,7 @@ jobs:
         run: 
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
-          TARGETS="redstone-node geminer redwallet gemservice cryptotest redwallet-api redwallet-upgrader"          if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"          if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
           rm -rf redstone-${TAG} 
           mkdir redstone-${TAG}
           cp ${TARGETS} redstone-${TAG}/
@@ -168,7 +168,7 @@ jobs:
         run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
-          TARGETS="redstone-node geminer redwallet gemservice cryptotest redwallet-api redwallet-upgrader"          strip ${TARGETS}
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"          strip ${TARGETS}
           rm -rf redstone-${TAG}
           mkdir redstone-${TAG}
           cp ${TARGETS} redstone-${TAG}/
