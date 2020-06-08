@@ -93,10 +93,11 @@ jobs:
         id: before_deploy
         env:
           COMMIT_SHA: ${{ github.sha }}
-        run: 
+        run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
-          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"          if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
+          if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
           rm -rf redstone-${TAG} 
           mkdir redstone-${TAG}
           cp ${TARGETS} redstone-${TAG}/
@@ -168,7 +169,8 @@ jobs:
         run: |
           if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA}; fi
           cd build/src
-          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"          strip ${TARGETS}
+          TARGETS="redstone-node geminer redwallet gemservice Cryptotester redwallet-api redwallet-upgrader"
+          strip ${TARGETS}
           rm -rf redstone-${TAG}
           mkdir redstone-${TAG}
           cp ${TARGETS} redstone-${TAG}/
