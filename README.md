@@ -1,7 +1,5 @@
 # RedStone
-RedStones is the gem cryptocurrency. Rairty, priavcy and a finite suply.
-LINUX  BUILD  https://gofile.io/d/KW6ZNq --download
-
+RedStones is the gem cryptocurrency. Rarity, privacy and a finite supply.
 ## Installing
 
 We offer binary images of the latest releases [here](https://github.com/RedStoneCoin/redstone/releases/latest)
