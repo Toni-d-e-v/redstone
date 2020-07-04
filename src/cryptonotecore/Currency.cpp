@@ -227,7 +227,7 @@ namespace CryptoNote
             reward = 0;
             return true;
         }
-        if (alreadyGeneratedCoins >= 250000000000000) { //alreadyGeneratedCoins are 250000000000000
+        if (alreadyGeneratedCoins >= 250000000) { //alreadyGeneratedCoins are 250000000 no 25m 
             baseReward = calc_vtwo(250000000000000-alreadyGeneratedCoins, currentBlockSize);
         }
         logger(TRACE) << "Base reward " << baseReward;
