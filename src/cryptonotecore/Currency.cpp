@@ -9,14 +9,6 @@
 #include "Currency.h"
 /////////////////////
 
-
-#include <iostream>
-#include <sstream>
-#include <cstdint>
-#include <functional> //for std::hash
-#include <string>
-#include <sstream>
-
 #include <cctype>
 #include <common/Base58.h>
 #include <common/CheckDifficulty.h>
@@ -187,30 +179,6 @@ namespace CryptoNote
             return static_cast<uint32_t>(-1);
         }
     }
-    template <typename T>
-    std::string to_string(const T& t)
-    {
-        std::ostringstream ss;
-        ss << t;
-        return ss.str();
-    }
-
-    uint64_t to_int(std::string str) {
-        uint64_t value;
-        std::istringstream iss(str);
-        iss >> value;
-        return value;
-    }
-
-
-    uint64_t calc_vtwo(uint64_t height, uint64_t size) {
-        std::string str = to_string(height + size);
-        std::hash<std::string> hasher;
-        auto hashed = hasher(str); 
-        return to_int(to_string(hashed).substr(0,7));
-        //return out
-    }
-
 
     bool Currency::getBlockReward(
         uint8_t blockMajorVersion,
@@ -222,14 +190,8 @@ namespace CryptoNote
         int64_t &emissionChange) const
     {
         
-        uint64_t baseReward = 500000; // (0.5 RS)
-        if (alreadyGeneratedCoins >= 250000000000000) { // max supply == 250m
-            reward = 0;
-            return true;
-        }
-        if (alreadyGeneratedCoins >= 250000000) { //no its 250k dna
-            reward = calc_vtwo(250000000000000-alreadyGeneratedCoins, currentBlockSize);// max supply == 250m
-        }
+        uint64_t baseReward = 500000; // (0.5 RS) 
+
         logger(TRACE) << "Base reward " << baseReward;
 
         if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
